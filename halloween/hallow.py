@@ -1,10 +1,16 @@
 import turtle as trtl
 import random
 wn = trtl.Screen()
-gifs=['funny-ghost-gif-halloween','gif,halloween-pumpkin.gif', 'skull-animation_3.gif', 'wbe-halloween-pumpkins.gif']
-wn.addshape(gifs)
+gifs=['ghost.gif', 'skull.gif', 'smile.gif']
+#the names are changed in the replit
+for i in gifs:
+	wn.addshape(i)
 t=trtl
-def make_gif():
-  t.shape(random(gifs))
-t.onclick(make_gif)
+n=0
+def spin(x,y):
+  t.penup()
+  t.circle(40)
+wn.bgpic("fog.gif")
+t.shape(random.choice(gifs))
+t.onclick(spin)
 wn.mainloop()
